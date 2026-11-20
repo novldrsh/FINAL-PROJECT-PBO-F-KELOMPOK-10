@@ -1,0 +1,15 @@
+## Hasil build dan publish
+bin/
+obj/
+terbit/
+
+## Editor
+.vs/
+.vscode/
+*.user
+*.suo
+.idea/
+
+## Berkas sistem
+.DS_Store
+Thumbs.db
