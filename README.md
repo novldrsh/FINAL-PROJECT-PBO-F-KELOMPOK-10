@@ -34,11 +34,98 @@ yang cocok dengan kode.
 
 ```mermaid
 classDiagram
-    class Induk {
+    direction TB
+
+    class Motif {
         <<abstract>>
+        -string jenis
+        -int petak
+        +Jenis string
+        +Petak int
+        +Keterangan()* string
+        +JumlahPetak()* int
+        +ToString() string
     }
-    Induk <|-- TurunanA
-    Induk <|-- TurunanB
+    class MotifFlora {
+        +Keterangan() string
+        +JumlahPetak() int
+    }
+    class MotifFauna {
+        +Keterangan() string
+        +JumlahPetak() int
+    }
+    class MotifGeometris {
+        +Keterangan() string
+        +JumlahPetak() int
+    }
+    Motif <|-- MotifFlora
+    Motif <|-- MotifFauna
+    Motif <|-- MotifGeometris
+
+    class Susunan {
+        -List~Motif~ _isi
+        +Isi IReadOnlyList~Motif~
+        +Taruh(Motif, int, int)
+        +Angkat(int, int)
+    }
+    Susunan o-- Motif : memiliki
+
+    class IKaidah {
+        <<interface>>
+        +Nama string
+        +Periksa(Susunan) HasilPeriksa
+    }
+    class KaidahPengulangan {
+        +Periksa(Susunan) HasilPeriksa
+    }
+    class KaidahSimetri {
+        +Periksa(Susunan) HasilPeriksa
+    }
+    IKaidah <|.. KaidahPengulangan
+    IKaidah <|.. KaidahSimetri
+
+    class Tantangan {
+        -IKaidah _kaidah
+        +Susunan Susunan
+        +Tantangan(IKaidah)
+        +Tantangan(IKaidah, Susunan)
+        +Periksa() HasilPeriksa
+    }
+    Tantangan --> IKaidah : memakai
+    Tantangan *-- Susunan : memiliki
+
+    class Level {
+        -List~Tantangan~ _daftar
+        +Nomor int
+        +Terbuka bool
+        +Daftar IReadOnlyList~Tantangan~
+        +event SkorBerubah
+        +event LevelSelesai
+    }
+    Level o-- Tantangan : memiliki
+
+    class SesiLatihan {
+        <<IDisposable>>
+        -IPenyimpanan _penyimpanan
+        +Mulai(Level)
+        +Dispose()
+    }
+    class IPenyimpanan {
+        <<interface>>
+        +Muat(string) string
+        +Simpan(string, string)
+    }
+    SesiLatihan ..> IPenyimpanan : memakai
+    SesiLatihan --> Level : memakai
+
+    class MotifTidakMuatException {
+        +MotifTidakMuatException(string)
+    }
+    class KaidahTidakDikenalException {
+        +KaidahTidakDikenalException(string)
+    }
+    Exception <|-- MotifTidakMuatException
+    Exception <|-- KaidahTidakDikenalException
 ```
 
 TULIS_DI_SINI
