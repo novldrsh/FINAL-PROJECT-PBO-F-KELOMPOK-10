@@ -5,7 +5,7 @@
 
 ## Tautan
 
-- Paket rilis (GitHub Releases, zip yang dapat langsung dijalankan): TULIS_DI_SINI
+- Paket rilis (GitHub Releases, zip yang dapat langsung dijalankan): https://github.com/novldrsh/FINAL-PROJECT-PBO-F-KELOMPOK-10/releases/tag/v0.1
 
 ## Kelompok
 
