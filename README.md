@@ -13,7 +13,7 @@
 |---|---|---|
 | NOVALDI RAYHAN ASSHIDDIQI | 5025251188 | novldrsh |
 | | | |
-| | | |
+| RADEN RORO FABRONITA SECTIA FARELA | 5025251228 | fabronitasf |
 
 ## Ide dan pembeda
 
