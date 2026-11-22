@@ -11,7 +11,7 @@
 
 | Nama | NRP | Akun GitHub |
 |---|---|---|
-| TULIS_DI_SINI | | |
+| NOVALDI RAYHAN ASSHIDDIQI | 5025251188 | novldrsh |
 | | | |
 | | | |
 
