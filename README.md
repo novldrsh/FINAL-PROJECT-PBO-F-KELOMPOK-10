@@ -12,7 +12,7 @@
 | Nama | NRP | Akun GitHub |
 |---|---|---|
 | NOVALDI RAYHAN ASSHIDDIQI | 5025251188 | novldrsh |
-| | | |
+| ALTHOF RAHMATULLAH| 5025251204| Linney1|
 | RADEN RORO FABRONITA SECTIA FARELA | 5025251228 | fabronitasf |
 
 ## Ide dan pembeda
